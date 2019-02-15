@@ -3,7 +3,6 @@ import CommentContainer from './CommentContainer';
 import React from 'react';
 import agent from '../../agent';
 import { connect } from 'react-redux';
-import marked from 'marked';
 import { ARTICLE_PAGE_LOADED, ARTICLE_PAGE_UNLOADED } from '../../constants/actionTypes';
 
 const mapStateToProps = state => ({
@@ -34,8 +33,7 @@ class Article extends React.Component {
     if (!this.props.article) {
       return null;
     }
-    //MARKED HTML
-    const markup = { __html: marked(this.props.article.url, { sanitize: true }) };
+    console.log(this.props.article);
     const canModify = this.props.currentUser &&
       this.props.currentUser.username === this.props.article.author.username;
     return (
@@ -54,27 +52,20 @@ class Article extends React.Component {
 
         <div className="container page">
 
-          <div className="row article-content">
-            <div className="col-xs-12">
-
-              <div dangerouslySetInnerHTML={markup}></div>
-
-              <ul className="tag-list">
-                {
-                  this.props.article.tagList.map(tag => {
-                    return (
-                      <li
-                        className="tag-default tag-pill tag-outline"
-                        key={tag}>
-                        {tag}
-                      </li>
-                    );
-                  })
-                }
-              </ul>
-
-            </div>
-          </div>
+        <h1>URL : {this.props.article.url}</h1>
+          <ul className="tag-list">
+            {
+              this.props.article.tagList.map(tag => {
+                return (
+                  <li
+                    className="tag-default tag-pill tag-outline"
+                    key={tag}>
+                    {tag}
+                  </li>
+                );
+              })
+            }
+          </ul>
 
           <hr />
 
