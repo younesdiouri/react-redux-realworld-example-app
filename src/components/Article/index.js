@@ -4,6 +4,7 @@ import React from 'react';
 import agent from '../../agent';
 import { connect } from 'react-redux';
 import { ARTICLE_PAGE_LOADED, ARTICLE_PAGE_UNLOADED } from '../../constants/actionTypes';
+import Image from 'react-bootstrap/Image';
 
 const mapStateToProps = state => ({
   ...state.article,
@@ -52,7 +53,8 @@ class Article extends React.Component {
 
         <div className="container page">
 
-        <h1>URL : {this.props.article.url}</h1>
+        <Image src={this.props.article.url} fluid />
+
           <ul className="tag-list">
             {
               this.props.article.tagList.map(tag => {
