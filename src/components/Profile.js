@@ -14,7 +14,7 @@ const EditProfileSettings = props => {
       <Link
         to="/settings"
         className="btn btn-sm btn-outline-secondary action-btn">
-        <i className="ion-gear-a"></i> Edit Profile Settings
+        <i className="ion-gear-a"></i> Modifier le profil
       </Link>
     );
   }
@@ -51,7 +51,7 @@ class Profile extends React.Component {
           <Link
             className="nav-link active"
             to={`/@${this.props.profile.username}`}>
-            My Articles
+            Mes Objets
           </Link>
         </li>
 
@@ -59,7 +59,7 @@ class Profile extends React.Component {
           <Link
             className="nav-link"
             to={`/@${this.props.profile.username}/wishlists`}>
-            Wishlistd Articles
+            Articles Favoris
           </Link>
         </li>
       </ul>

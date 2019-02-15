@@ -71,6 +71,9 @@ class Article extends React.Component {
 
           <hr />
 
+          <p>
+            {this.props.article.description}
+          </p>
           <div className="article-actions">
           </div>
 

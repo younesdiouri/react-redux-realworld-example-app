@@ -107,35 +107,36 @@ class Editor extends React.Component {
                     <input
                       className="form-control form-control-lg"
                       type="text"
-                      placeholder="Article Title"
+                      placeholder="Titre"
                       value={this.props.title}
                       onChange={this.changeTitle} />
                   </fieldset>
 
                   <fieldset className="form-group">
-                    <input
-                      className="form-control"
-                      type="text"
-                      placeholder="What's this article about?"
-                      value={this.props.description}
-                      onChange={this.changeDescription} />
-                  </fieldset>
-
-                  <fieldset className="form-group">
-                    <textarea
+                    
+                      <textarea
                       className="form-control"
                       rows="8"
-                      placeholder="Url"
-                      value={this.props.url}
-                      onChange={this.changeUrl}>
+                      placeholder="Description"
+                      value={this.props.description}
+                      onChange={this.changeDescription}>
                     </textarea>
                   </fieldset>
 
                   <fieldset className="form-group">
+                  <input
+                      className="form-control"
+                      type="text"
+                      placeholder="URL de l'image"
+                      value={this.props.url}
+                      onChange={this.changeUrl} />
+                  </fieldset>
+
+                  <fieldset className="form-group">
                     <input
                       className="form-control"
                       type="text"
-                      placeholder="Enter tags"
+                      placeholder="Tags"
                       value={this.props.tagInput}
                       onChange={this.changeTagInput}
                       onKeyUp={this.watchForEnter} />
@@ -161,7 +162,7 @@ class Editor extends React.Component {
                     type="button"
                     disabled={this.props.inProgress}
                     onClick={this.submitForm}>
-                    Publish Article
+                    Publier
                   </button>
 
                 </fieldset>

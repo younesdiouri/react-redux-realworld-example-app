@@ -61,7 +61,7 @@ const ArticlePreview = props => {
         <h1>{article.title}</h1>
         <p>{article.description}</p>
         <Image src={article.url} fluid />
-        <span>Read more...</span>
+        <span>Plus...</span>
         <ul className="tag-list">
           {
             article.tagList.map(tag => {
