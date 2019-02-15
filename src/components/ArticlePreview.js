@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import agent from '../agent';
 import { connect } from 'react-redux';
 import { ARTICLE_WISHLISTED, ARTICLE_UNWISHLISTED } from '../constants/actionTypes';
+import Image from 'react-bootstrap/Image';
 
 const WISHLISTED_CLASS = 'btn btn-sm btn-primary';
 const NOT_WISHLISTED_CLASS = 'btn btn-sm btn-outline-primary';
@@ -59,6 +60,7 @@ const ArticlePreview = props => {
       <Link to={`/article/${article.slug}`} className="preview-link">
         <h1>{article.title}</h1>
         <p>{article.description}</p>
+        <Image src={article.url} fluid />
         <span>Read more...</span>
         <ul className="tag-list">
           {
